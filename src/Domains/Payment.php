@@ -5,7 +5,8 @@ namespace ValdeirPsr\PagSeguro\Domains;
 use DOMDocument;
 use DOMXPath;
 use ValdeirPsr\PagSeguro\Domains\{
-    User\Sender
+    User\Sender,
+    PaymentMethod\AbstractPaymentMethod
 };
 use ValdeirPsr\PagSeguro\Interfaces\Serializer\Xml;
 use ValdeirPsr\PagSeguro\Constants\Shipping\Type;
