@@ -26,7 +26,6 @@ jobs:
       - name: Get Composer Cache Directory
         id: composer-cache
         run: |
-          cd upload/system/library/PagSeguro
           echo "::set-output name=dir::$(composer config cache-files-dir)"
 
       - uses: actions/cache@v2
@@ -38,7 +37,6 @@ jobs:
 
       - name: Install PHPUnit e Dependencies
         run: |
-          cd upload/system/library/PagSeguro
           composer install --ignore-platform-req php
 
       - name: Build Docker Server
@@ -46,10 +44,6 @@ jobs:
 
       - name: Run Tests
         run: |
-          cd upload/system/library/PagSeguro
           composer tdd
 
-      - name: PHPCS
         run: |
-          cd upload/system/library/PagSeguro
-          composer phpcs
