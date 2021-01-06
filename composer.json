@@ -1,6 +1,6 @@
 {
     "name": "valdeir/pagseguro",
-    "description": "Codigo criado para integraçao com o OpenCart",
+    "description": "SDK não oficial para o PagSeguro Checkout Transparente",
     "require": {
         "php": "^7.3 | ^8.0",
         "curl/curl": "^2.3",
