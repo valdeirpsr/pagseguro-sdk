@@ -186,4 +186,17 @@ class PaymentTest extends TestCase
 
         $this->assertXmlStringEqualsXmlString($xml, $instance->toXml());
     }
+
+    /**
+     * @test
+     */
+    public function mustReturnAnErrorIfThePaymentMethodIsNotSupported()
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $paymentMethodInvalid = new \stdClass();
+
+        $instance = new Payment();
+        $instance->setMode('default');
+        $instance->setPayment($paymentMethodInvalid);
+    }
 }

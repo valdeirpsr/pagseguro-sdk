@@ -251,8 +251,8 @@ class Payment
      */
     public function setPayment($value): self
     {
-        if ($value instanceof AbstractPaymentMethod) {
-            die('ok');
+        if (!($value instanceof AbstractPaymentMethod)) {
+            throw new \InvalidArgumentException('Payment Method not supported', 550);
         }
 
         $this->payment = $value;
