@@ -89,4 +89,25 @@ class SessionTest extends TestCase
 
         $stub->generate();
     }
+
+    /**
+     * @test
+     */
+    public function shouldReturnAnErrorIfTheSessionIDIsNotFound()
+    {
+        $this->expectException(RuntimeException::class);
+
+        $env = Environment::sandbox('pagseguro@valdeir.dev', '');
+
+        $stub = $this->getMockBuilder(Session::class)
+            ->setConstructorArgs([$env])
+            ->setMethods(['buildUrl'])
+            ->getMock();
+
+        $stub->expects($this->any())
+            ->method('buildUrl')
+            ->willReturn(getenv('SERVER_URL') . 'v2/sessions/invalid-3');
+
+        $stub->generate();
+    }
 }

@@ -55,6 +55,8 @@ class Session
                 ]);
 
                 return $session_id;
+            } else {
+                throw new \RuntimeException('Session not generated', 1040);
             }
         } elseif ($request->getHttpStatus() === 401) {
             throw new AuthException($this->env, 'Check your credentials', 1000);
