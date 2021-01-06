@@ -28,6 +28,8 @@
     "scripts": {
       "tdd": "vendor/bin/phpunit",
       "phpcs": "vendor/bin/phpcs --colors -s --bootstrap=vendor/autoload.php --standard=PSR1,PSR12 -p --report=full src/",
-      "stan": "vendor/bin/phpstan analyze src"
+      "stan": "vendor/bin/phpstan analyze src",
+      "CodeSniffer": "@phpcs",
+      "PStan": "@stan"
     }
 }
