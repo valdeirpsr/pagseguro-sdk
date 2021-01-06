@@ -44,7 +44,7 @@ class PagSeguroRequest extends \Exception
      */
     public function getRequest(): Curl
     {
-        return $request;
+        return $this->request;
     }
 
     /**
