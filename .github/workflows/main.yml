@@ -39,7 +39,7 @@ jobs:
           composer install --ignore-platform-req php
 
       - name: Build Docker Server
-        run: docker-compose -f upload/system/library/PagSeguro/tests/server/docker-compose.yaml up -d
+        run: docker-compose -f tests/server/docker-compose.yaml up -d
 
       - name: Run Tests
         run: |
