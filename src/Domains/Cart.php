@@ -7,6 +7,9 @@ class Cart
     /** @var CartItem[] */
     private $items = [];
 
+    /** @var array */
+    private $values = [];
+
     /**
      * @param CartItem[] $values
      */
