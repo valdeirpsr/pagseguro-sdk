@@ -5,3 +5,6 @@ help:
 	@echo "  cs               para validar o código utilizando o PHP Code Sniffer"
 	@echo "  reference        para exibir a documentação de referência"
 	@echo "  docs             para exibir a documentação de uso (NPM obrigatório)"
+
+changelog:
+	npx conventional-changelog-cli -p angular -i CHANGELOG.md -s
