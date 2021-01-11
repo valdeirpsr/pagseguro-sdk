@@ -1,5 +1,15 @@
-name: Test SDK with PHPUnit
-on: [push, pull_request]
+name: Test SDK
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - '.github/**'
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - '.github/**'
 
 jobs:
   phpunit:
