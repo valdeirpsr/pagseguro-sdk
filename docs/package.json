@@ -1,0 +1,13 @@
+{
+  "name": "pagseguro-sdk-doc",
+  "version": "1.0.0",
+  "description": "Documentaçao do SDK nao oficial do PagSeguro",
+  "main": "index.html",
+  "repository": "https://github.com/valdeirpsr/pagseguro-sdk",
+  "author": "Valdeir S.",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "docsify": "^4.11.6"
+  }
+}

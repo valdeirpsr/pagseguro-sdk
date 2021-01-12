@@ -1,0 +1,10 @@
+- **Documentação**
+- [Introdução](introduction)
+- [Começando *](quick-start)
+- [Testes *](tests)
+- [Contribuindo *](contributing)
+- [Changelog](changelog)
+- **Links**
+- [API Reference](http://localhost:3000/api)
+- [Github](https://github.com/jhildenbiddle/docsify-themeable)
+- [Issue](https://github.com/valdeirpsr/pagseguro-sdk/issues)
