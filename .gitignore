@@ -1,4 +1,7 @@
 .phpunit.result.cache
+/.phpdoc
 /vendor
+/docs/node_modules
+/docs/api
 /tests/server/node_modules
 /log

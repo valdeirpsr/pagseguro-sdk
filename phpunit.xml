@@ -23,5 +23,9 @@
     <testsuite name="all">
       <directory>tests/unit/</directory>
     </testsuite>
+    <testsuite name="no-docker">
+      <directory>tests/unit/</directory>
+      <exclude>tests/unit/Request</exclude>
+    </testsuite>
   </testsuites>
 </phpunit>
