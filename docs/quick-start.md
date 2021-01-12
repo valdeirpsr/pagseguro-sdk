@@ -15,6 +15,8 @@ Para utilizar o SDK, é necessário possuir:
 
 Para começar, execute o passo a passo abaixo:
 
+### Via Composer
+
 **PHP 7.3 ou 7.4**
 
 No seu terminal, execute o comando abaixo
@@ -162,6 +164,8 @@ echo $response->getCode(); // Imprime o código de identificação da transaçã
 
 # Boleto
 
+Com este método de pagameneto, é necessário capturar a URL do boleto.
+
 ```php
 require_once 'vendor/autoload.php';
 
@@ -269,6 +273,8 @@ echo $response->getCode(); // Imprime o ID da transação
 ```
 
 # Débito
+
+É necessário redirecionar o usuário ao site do banco
 
 ```php
 require_once 'vendor/autoload.php';
@@ -387,7 +393,7 @@ echo implode(PHP_EOL, [
 
 # Habilitando *logs*
 
-Para habilitar os *logs*, utilize a classe `Logger` logo após carregar o *autoload*.
+Para habilitar os *logs*, utilize a classe `Logger` logo após carregar o *autoload.php*.
 
 ```php
 require_once 'vendor/autoload.php';
@@ -415,4 +421,4 @@ Logger::alert('Mensagem', ['Context 1', 'Context 2']);
 Logger::emergency('Mensagem', ['Context 1', 'Context 2']);
 ```
 ?> **Dica**<br>
-A classe `Logger` utiliza o [Monolog](https://seldaek.github.io/monolog/) para registrar os arquivos
+A classe `Logger` utiliza o [Monolog](https://seldaek.github.io/monolog/) para registrar os arquivos.

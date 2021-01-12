@@ -2,9 +2,9 @@
 - [Introdução](introduction)
 - [Começando *](quick-start)
 - [Testes *](tests)
-- [Contribuindo *](contributing)
+- [Contribuição *](contributing)
 - [Changelog](changelog)
 - **Links**
-- [API Reference](http://localhost:3000/api)
-- [Github](https://github.com/jhildenbiddle/docsify-themeable)
+- [API Reference](https://valdeirpsr.github.io/pagseguro-sdk/api)
+- [Github](https://github.com/valdeirpsr/pagseguro-sdk)
 - [Issue](https://github.com/valdeirpsr/pagseguro-sdk/issues)

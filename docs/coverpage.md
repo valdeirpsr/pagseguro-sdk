@@ -6,5 +6,6 @@
 - Gerencie os pagamentos (cancelar e reembolsar)
 - Obtenha informações do pagamento
 
-[GitHub](https://github.com/valdeirpsr/pagseguro-sdk)
 [Começar](#introdução)
+[GitHub](https://github.com/valdeirpsr/pagseguro-sdk)
+[API Reference](http://localhost:3000/)
