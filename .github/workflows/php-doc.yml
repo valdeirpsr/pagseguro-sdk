@@ -1,0 +1,25 @@
+name: API Reference
+on:
+  workflow_dispatch:
+
+jobs:
+  phpdoc:
+    name: Gera a referência de API
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Download PHPDoc
+        run: wget https://phpdoc.org/phpDocumentor.phar
+
+      - name: Generate Doc
+        run: php phpDocumentor.phar -d src -t docs/api
+
+      - name: Save changes
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add -f docs/api
+          git commit -m 'chore: generated api reference'
+          git push
