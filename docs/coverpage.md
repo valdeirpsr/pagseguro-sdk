@@ -8,4 +8,4 @@
 
 [Começar](#introdução)
 [GitHub](https://github.com/valdeirpsr/pagseguro-sdk)
-[API Reference](http://localhost:3000/)
+[API Reference](https://valdeirpsr.github.io/pagseguro-sdk/api/)

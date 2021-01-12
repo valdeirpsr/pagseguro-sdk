@@ -11,6 +11,14 @@ Há duas formas de realizar os testes:
 
 ### Testes o Docker
 
+Levante o servidor para teste com o código abaixo:
+
+```bash
+docker-compose -f tests/server/docker-compose.yaml up -d
+```
+
+?> **Aviso**<br>O servidor rodará em http://localhost:3000
+
 No seu terminal, execute o *phpunit*.
 
 ```bash
@@ -33,7 +41,7 @@ No seu terminal, execute o *phpunit*.
 
 ```bash
 # Caso possua o PHPUnit instalado globalmente
-phpunit phpunit --testsuite no-docker
+phpunit --testsuite no-docker
 
 # Via Composer
 composer tdd -- --testsuite no-docker
