@@ -26,5 +26,5 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add -f docs/api
-          git commit -m 'chore: generated api reference'
+          git commit -m 'chore(bot): generated api reference'
           git push
