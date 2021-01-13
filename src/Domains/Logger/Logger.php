@@ -9,7 +9,8 @@ class Logger
 {
     private static $instance;
     private static $opts = [
-        'enabled' => true
+        'enabled' => true,
+        'path' => null
     ];
 
     private function __construct()
@@ -24,7 +25,7 @@ class Logger
         ], $opts);
 
         if (self::$instance === null) {
-            self::init();
+            self::init($opts);
 
             if (!is_dir(PAGSEGURO_LOG)) {
                 mkdir(PAGSEGURO_LOG, 0777, true);
@@ -148,14 +149,22 @@ class Logger
 
     /**
      * Cria as constantes necessárias
+     *
+     * @param array $opts
+     *
+     * @return void
      */
-    private static function init()
+    private static function init(array $opts = [])
     {
         if (!defined('DS')) {
             define('DS', DIRECTORY_SEPARATOR);
         }
 
         if (!defined('PAGSEGURO_LOG')) {
+            if (isset($opts['path']) && $opts['path'] !== null) {
+                define('PAGSEGURO_LOG', $opts['path']);
+            }
+
             define('PAGSEGURO_LOG', __DIR__ . DS . '..' . DS . '..' . DS . '..' . DS . 'log');
         }
     }
