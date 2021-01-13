@@ -1,0 +1,89 @@
+name: Test SDK
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - '.github/workflows/main.yml'
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - '.github/workflows/main.yml'
+
+jobs:
+  phpunit:
+    name: Test SDK | PHP ${{ matrix.php-versions }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-versions: ['7.3', '7.4', '8.0']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+
+      - name: Install Composer
+        run: |
+          wget -qO- composer-setup.php https://getcomposer.org/installer | php -- composer-setup.php
+          composer --version
+
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Install PHPUnit e Dependencies
+        run: |
+          composer install --ignore-platform-req php
+
+      - name: Build Docker Server
+        run: docker-compose -f tests/server/docker-compose.yaml up -d
+
+      - name: Run Tests
+        run: |
+          composer tdd
+
+  checkCode:
+    name: "Running PHP ${{ matrix.command }}"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        command: ['CodeSniffer', 'PStan']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Install Dependencies
+        run: composer install
+
+      - name: Check Code
+        run: composer ${{ matrix.command }}
