@@ -1,0 +1,39 @@
+{
+    "name": "valdeir/pagseguro",
+    "description": "SDK não oficial para o PagSeguro Checkout Transparente",
+    "homepage": "https://github.com/valdeirpsr/pagseguro-sdk",
+    "keywords": ["payment","sdk"],
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^7.3 | ^8.0",
+        "curl/curl": "^2.3",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "monolog/monolog": "^2.1"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.5",
+        "phpunit/phpunit": "^9.3",
+        "phpstan/phpstan": "^0.12.64"
+    },
+    "authors": [
+        {
+            "name": "Valdeir S.",
+            "email": "valdeir.naval@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "ValdeirPsr\\PagSeguro\\": "src/",
+          "ValdeirPsr\\PagSeguro\\Test\\": "tests/vendor/"
+        }
+    },
+    "scripts": {
+      "tdd": "vendor/bin/phpunit",
+      "phpcs": "vendor/bin/phpcs --colors -s --bootstrap=vendor/autoload.php --standard=PSR1,PSR12 -p --report=full src/",
+      "stan": "vendor/bin/phpstan analyze src",
+      "CodeSniffer": "@phpcs",
+      "PStan": "@stan"
+    }
+}
