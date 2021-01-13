@@ -4,6 +4,7 @@
     "homepage": "https://github.com/valdeirpsr/pagseguro-sdk",
     "keywords": ["payment","sdk"],
     "type": "library",
+    "license": "MIT",
     "require": {
         "php": "^7.3 | ^8.0",
         "curl/curl": "^2.3",
