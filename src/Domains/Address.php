@@ -39,7 +39,7 @@ class Address implements Xml, IArray
         string $city = null,
         string $state = null,
         string $postalCode = null,
-        string $complement = null
+        ?string $complement = null
     ) {
         if ($street) {
             $this->setStreet($street);
