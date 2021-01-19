@@ -22,6 +22,29 @@ class CartItem implements Xml, IArray
     /** @var int */
     private $quantity;
 
+    public function __construct(
+        string $id = null,
+        string $description = null,
+        float $amount = null,
+        int $quantity = null
+    ) {
+        if ($id) {
+            $this->setId($id);
+        }
+
+        if ($description) {
+            $this->setDescription($description);
+        }
+
+        if ($amount) {
+            $this->setAmount($amount);
+        }
+
+        if ($quantity) {
+            $this->setQuantity($quantity);
+        }
+    }
+
     /**
      * Identifica o item. Você pode escolher códigos que tenham significado para
      * seu sistema e informá-los nestes parâmetros.
