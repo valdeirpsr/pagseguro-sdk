@@ -17,6 +17,30 @@ class CartItemTest extends TestCase
     /**
      * @test
      */
+    public function checkItemFromConstructor()
+    {
+        $xml = '
+        <item>
+            <id>1</id>
+            <description>Descricao do item a ser vendido</description>
+            <amount>1.00</amount>
+            <quantity>2</quantity>
+        </item>
+        ';
+
+        $instance = new CartItem(
+            '1',
+            'Descricao do item a ser vendido',
+            1.00,
+            2
+        );
+
+        $this->assertXmlStringEqualsXmlString($xml, $instance->toXml());
+    }
+
+    /**
+     * @test
+     */
     public function valueWithMoreThanTwoDecimalPlacesShouldGiveError()
     {
         $this->expectException(InvalidArgumentException::class);
@@ -39,7 +63,7 @@ class CartItemTest extends TestCase
         ';
 
         $instance = CartItem::fromXml($xml);
-        
+
         $this->assertEquals('1', $instance->getId());
         $this->assertEquals('Descricao do item a ser vendido', $instance->getDescription());
         $this->assertEquals('2', $instance->getQuantity());
