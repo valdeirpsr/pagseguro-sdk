@@ -33,7 +33,7 @@ composer require valdeirpsr/pagseguro-sdk --ignore-platform-req php
  - PHP Curl (Extensão)
  - PHP Json (Extensão)
  - PHP Xml
- - PHp SimpleXml (Extensão)
+ - PHP SimpleXml (Extensão)
 
 
 📖 Documentação
