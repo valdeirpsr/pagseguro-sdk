@@ -1,5 +1,5 @@
 {
-    "name": "valdeir/pagseguro",
+    "name": "valdeirpsr/pagseguro",
     "description": "SDK não oficial para o PagSeguro Checkout Transparente",
     "homepage": "https://github.com/valdeirpsr/pagseguro-sdk",
     "keywords": ["payment","sdk"],
