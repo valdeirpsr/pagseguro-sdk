@@ -20,7 +20,7 @@ class PagSeguroRequest extends \Exception
         Environment $env,
         Curl $curl,
         $requestBody,
-        string $message = null,
+        string $message = '',
         int $code = 0,
         Throwable $previous = null
     ) {

@@ -106,10 +106,10 @@ class DebitCardTest extends TestCase
     {
         $xml = '
         <eft>
+            <method>eft</method>
             <bank>
                 <name>BANCO_BRASIL</name>
             </bank>
-            <method>eft</method>
         </eft>
         ';
 
