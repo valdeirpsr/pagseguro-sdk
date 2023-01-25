@@ -251,11 +251,14 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ValdeirPsr-PagSeguro-Domains-CartItem.html"
         },                {
+<<<<<<< HEAD
             "fqsen": "\\ValdeirPsr\\PagSeguro\\Domains\\CartItem\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
             "url": "classes/ValdeirPsr-PagSeguro-Domains-CartItem.html#method___construct"
         },                {
+=======
+>>>>>>> refs/remotes/origin/main
             "fqsen": "\\ValdeirPsr\\PagSeguro\\Domains\\CartItem\u003A\u003AsetId\u0028\u0029",
             "name": "setId",
             "summary": "Identifica\u0020o\u0020item.\u0020Voc\u00EA\u0020pode\u0020escolher\u0020c\u00F3digos\u0020que\u0020tenham\u0020significado\u0020para\nseu\u0020sistema\u0020e\u0020inform\u00E1\u002Dlos\u0020nestes\u0020par\u00E2metros.",
