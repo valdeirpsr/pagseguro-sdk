@@ -315,10 +315,9 @@ class Transaction implements Xml
         $lastEventDate = $xpath->query('/transaction/lastEventDate');
 
         if ($lastEventDate->count() > 0) {
-            $instance->lastEventDate = DateTime::createFromFormat(
-                'Y-m-d\TH:i:s\.000P',
-                $lastEventDate->item(0)->textContent
-            );
+            try {
+                $instance->lastEventDate = new DateTime($lastEventDate->item(0)->textContent);
+            } catch (\Exception $e) {}
         }
 
         $grossAmount = $xpath->query('/transaction/grossAmount');
