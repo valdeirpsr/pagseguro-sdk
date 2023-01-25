@@ -265,7 +265,7 @@ class Transaction implements Xml
         $date = $xpath->query('/transaction/date');
 
         if ($date->count() > 0) {
-            $instance->date = DateTime::createFromFormat('Y-m-d\TH:i:s.000P', $date->item(0)->textContent);
+            $instance->date = new DateTime($date->item(0)->textContent);
         }
 
         $payment = $xpath->query('/transaction/paymentMethod/type');
@@ -317,7 +317,8 @@ class Transaction implements Xml
         if ($lastEventDate->count() > 0) {
             try {
                 $instance->lastEventDate = new DateTime($lastEventDate->item(0)->textContent);
-            } catch (\Exception $e) {}
+            } catch (\Exception $e) {
+            }
         }
 
         $grossAmount = $xpath->query('/transaction/grossAmount');
@@ -371,10 +372,7 @@ class Transaction implements Xml
         $escrowEndDate = $xpath->query('/transaction/escrowEndDate');
 
         if ($escrowEndDate->count() > 0) {
-            $instance->escrowEndDate = DateTime::createFromFormat(
-                'Y-m-d\TH:i:s\.000P',
-                $escrowEndDate->item(0)->textContent
-            );
+            $instance->escrowEndDate = new DateTime($escrowEndDate->item(0)->textContent);
         }
 
         $items = $xpath->query('/transaction/items/item');
