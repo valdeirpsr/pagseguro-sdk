@@ -6,8 +6,8 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "php": "^7.3 | ^8.0",
-        "curl/curl": "^2.3",
+        "php": "^7.3 | ^8.0 | ^8.1",
+        "curl/curl": "^2.5",
         "ext-curl": "*",
         "ext-json": "*",
         "monolog/monolog": "^2.1"
