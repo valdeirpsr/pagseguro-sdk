@@ -135,7 +135,7 @@ class Transaction implements Xml
      */
     public function getLastEventDate(): ?DateTime
     {
-        return $this->lastEventDate;
+        return ($this->lastEventDate instanceof DateTime) ? $this->lastEventDate : null;
     }
 
     /**
